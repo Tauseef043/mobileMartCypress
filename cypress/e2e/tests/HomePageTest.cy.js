@@ -1,5 +1,5 @@
 /// <reference types="Cypress" />
-import HomePageLeftNav from "../pageObjects/HomePageLeftNavOB.cy.js";
+import HomePageLeftNav from "../pageObjects/HomePageLeftNavOB.js";
 
 describe("HomePage Test Suit", function () {
   const leftNav = new HomePageLeftNav();
@@ -21,6 +21,7 @@ describe("HomePage Test Suit", function () {
       "Bacola – Grocery Market and Food Theme – KlbTheme"
     );
   });
+  /*
   it("banner visiblity", () => {
     cy.get("#slick-slide00 > .slider-item > .overlay-link").should(
       "be.visible"
@@ -103,8 +104,10 @@ describe("HomePage Test Suit", function () {
   });
   it("left meat Nav link verification", function () {
   
-    leftNav.getLeft_fruitAndeg(this.data.meatNac).should('be.enabled').click()
-    expect(cy.title(),this.data.meatsSeafoodPage).to.be.true
+    leftNav.getLeft_fruitAndeg(this.data.meatNac).click()
+    cy.log(this.data.meatsSeafoodPage)
+    cy.title().should('eq',this.data.meatsSeafoodPage)
+    cy.go('back')
   });
   
   it("left breakfast Nav Visiblity", function () {
@@ -113,4 +116,80 @@ describe("HomePage Test Suit", function () {
       expect(navTitle.includes(this.data.breakfast)).to.be.true;
     });
   });
-});
+  it("left breakfast Nav link verification", function () {
+  
+    leftNav.getLeft_fruitAndeg(this.data.breakfast).click()
+    cy.log(this.data.breakfast)
+    cy.title().should('eq',this.data.breakfastDiaryPage)
+    cy.go('back')
+  });
+*/
+
+  // it("Left Nav Value of the Day", function () {
+  //   leftNav.getLeft_ValueOfDay().then(function (element) {
+  //     var title = element.text();
+
+  //     expect(title).to.be.eq(this.data.valueOfDaynAV);
+  //   }).click()
+
+  //    cy.title().should('eq',this.data.productPage)
+  //   cy.go('back')
+  // })
+
+  // it("Left Nav top 100 offers", function () {
+  //   leftNav.get_Left_Top100().then(function (element) {
+  //     var title = element.text();
+
+  //     expect(title).to.be.eq(this.data.Top100Nav);
+  //   }).click()
+
+  //   cy.title().should('eq',this.data.productPage)
+  //  cy.go('back')
+  // });
+
+
+
+  
+  // it("Left Nav Value new arrivals", function () {
+  //   leftNav.get_LeftNewArrival().then(function (element) {
+  //     var title = element.text();
+
+  //     expect(title).to.be.eq(this.data.NewArrival);
+  //   }).click()
+
+  //   cy.title().should('eq',this.data.productPage)
+  //  cy.go('back')
+  // });
+
+
+
+  it("Left Nav Banner1 Visibility",function(){
+
+    leftNav.get_LeftNavBanner1().should('be.visible')
+  })
+  it("Left Nav Banner2 Visibility",function(){
+
+    leftNav.get_LeftNavBanner2().should('be.visible')
+  })
+
+  it('verify left Nav sub2 Icons',function(){
+
+    leftNav.get_LeftNavSub2Icons().each(($e1,index,$list)=>{
+
+
+      cy.get("div[class*='elementor-widget-container']  div[class='icon']").eq(index).next().then(function(element){
+
+        expect(element).to.be.visible
+      })
+    })
+  })
+
+  it('verify left Nav sub 2 texts',function(){
+
+    leftNav.get_LeftNavSub2Text().each(($e1,index,$list)=>{
+
+      el
+    
+    })
+  })
+})

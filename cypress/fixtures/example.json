@@ -1,4 +1,7 @@
 {
+  "meatsSeafoodPage": "Meats & Seafood – Bacola – Grocery Market and Food Theme",
+  "breakfastDiaryPage": "Breakfast & Dairy – Bacola – Grocery Market and Food Theme",
+  "productPage": "Products – Bacola – Grocery Market and Food Theme",
   "fruitNav": " Fruits & Vegetables",
   "meatNac": " Meats & Seafood",
   "breakfast": " Breakfast & Dairy",
@@ -9,9 +12,13 @@
   "groceryNav": "hello@cypress.io",
   "cutNav": "Cuts & Sprouts",
   "exoticFruitNav": "Exotic Fruits & Veggies",
-  "freshFruitNav" : "Fresh Fruits",
-  "freshVegNav" : "Fresh Vegetables",
-  "herbsNav" : "Herbs & Seasonings",
-  "PackageNav" : "Packaged Produce",
-  "PartyNav" : "Party Trays"
+  "freshFruitNav": "Fresh Fruits",
+  "freshVegNav": "Fresh Vegetables",
+  "herbsNav": "Herbs & Seasonings",
+  "PackageNav": "Packaged Produce",
+  "PartyNav": "Party Trays",
+  "valueOfDaynAV": " Value of the Day",
+  "Top100Nav": " Top 100 Offers",
+  "NewArrival": " New Arrivals",
+  "SubNav2": ["Download the Bacola App to your Phone.","Order now so you dont miss the opportunities.","Your order will arrive at your door in 15 minutes."]
 }
