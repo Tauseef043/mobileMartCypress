@@ -1,10 +1,11 @@
 {
   "fruitNav": " Fruits & Vegetables",
-  "meatNac": "hello@cypress.io",
-  "breakfast": "hello@cypress.io",
+  "meatNac": " Meats & Seafood",
+  "breakfast": " Breakfast & Dairy",
   "baverage": "Fixtures are a great way to mock data for responses to routes",
   "breadNav": "Using fixtures to represent data",
   "frozenNav": "hello@cypress.io",
   "buiscuitNav": "Using fixtures to represent data",
-  "groceryNav": "hello@cypress.io"
+  "groceryNav": "hello@cypress.io",
+   "cutNav": "Cuts & Sprouts"
 }
