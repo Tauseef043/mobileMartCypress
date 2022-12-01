@@ -7,5 +7,11 @@
   "frozenNav": "hello@cypress.io",
   "buiscuitNav": "Using fixtures to represent data",
   "groceryNav": "hello@cypress.io",
-   "cutNav": "Cuts & Sprouts"
+  "cutNav": "Cuts & Sprouts",
+  "exoticFruitNav": "Exotic Fruits & Veggies",
+  "freshFruitNav" : "Fresh Fruits",
+  "freshVegNav" : "Fresh Vegetables",
+  "herbsNav" : "Herbs & Seasonings",
+  "PackageNav" : "Packaged Produce",
+  "PartyNav" : "Party Trays"
 }
