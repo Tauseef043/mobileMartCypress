@@ -37,5 +37,38 @@ class HomePageLeftNavOB {
       "div[class*='elementor-widget-container']  div[class='text']"
     );
   }
+
+  get_LeftNav_TrendingProdict_Image() {
+    return cy.get("div[data-id='80d9e2d']  div.thumbnail-wrapper");
+  }
+
+  get_LeftNav_TrendingProdict_title() {
+    return cy.get("div[data-id='80d9e2d']  h3.product-title a");
+  }
+  get_LeftNav_TrendingProdict_DiscPrice() {
+    return cy.get("div[data-id='80d9e2d'] div.content-wrapper  span.price ins span bdi");
+  }
+
+  get_LeftNav_TrendingProdict_price() {
+    return cy.get("div[data-id='80d9e2d'] div.content-wrapper  span.price del span bdi");
+  }
+  get_LeftNav_CustWidget_title(){
+    return cy.get("div[data-id='23c1373']  h4.widget-title")
+  }
+  get_LeftNav_CustWidget_EnteryTitle(){
+    return cy.get("div[data-id='23c1373']  h4.entry-title")
+  }
+  get_LeftNav_CustWidget_EnteryMsg(){
+    return cy.get("div[data-id='23c1373']  h4.entry-message")
+  }
+  get_LeftNav_CustWidget_Img(){
+    return cy.get("div[data-id='23c1373']  div.avatar")
+  }
+  get_LeftNav_CustWidget_cusName(){
+    return cy.get("div[data-id='23c1373']  h3.customer-name")
+  }
+  get_LeftNav_CustWidget_cusDesignation(){
+    return cy.get("div[data-id='23c1373']  span.customer-mission")
+  }
 }
 export default HomePageLeftNavOB;

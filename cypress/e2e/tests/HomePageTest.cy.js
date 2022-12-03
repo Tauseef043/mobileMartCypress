@@ -147,9 +147,6 @@ describe("HomePage Test Suit", function () {
   //  cy.go('back')
   // });
 
-
-
-  
   // it("Left Nav Value new arrivals", function () {
   //   leftNav.get_LeftNewArrival().then(function (element) {
   //     var title = element.text();
@@ -161,35 +158,90 @@ describe("HomePage Test Suit", function () {
   //  cy.go('back')
   // });
 
+  // it("Left Nav Banner1 Visibility", function () {
+  //   leftNav.get_LeftNavBanner1().should("be.visible");
+  // });
+  // it("Left Nav Banner2 Visibility", function () {
+  //   leftNav.get_LeftNavBanner2().should("be.visible");
+  // });
 
+  // it("verify left Nav sub2 Icons", function () {
+  //   leftNav.get_LeftNavSub2Icons().each(($e1, index, $list) => {
+  //     cy.get("div[class*='elementor-widget-container']  div[class='icon']")
+  //       .eq(index)
+  //       .next()
+  //       .then(function (element) {
+  //         expect(element).to.be.visible;
+  //       });
+  //   });
+  // });
 
-  it("Left Nav Banner1 Visibility",function(){
+  // it("verify left Nav sub 2 texts", function () {
+  //   leftNav.get_LeftNavSub2Text().each(($e1, index, $list) => {
+  //     // cy.log($e1.text())
+  //     if ($e1.text().trim().includes(this.data.AppDownTxt)) {
+  //       expect($e1.text().trim()).to.be.eq(this.data.AppDownTxt);
+  //     }
+  //     if ($e1.text().trim().includes(this.data.orderNowTxt)) {
+  //       expect($e1.text().trim()).to.be.eq(this.data.orderNowTxt);
+  //     }
+  //     if ($e1.text().trim().includes(this.data.orderariveTxt)) {
+  //       expect($e1.text().trim()).to.be.eq(this.data.orderariveTxt);
+  //     }
+  //   });
+  // });
+  // it("Trending Text visibility", function () {
+  //   cy.get("div[data-id='80d9e2d']")
+  //     .contains(this.data.trendingProductTxt)
+  //     .should("be.visible");
+  // });
 
-    leftNav.get_LeftNavBanner1().should('be.visible')
+  // it("Trending Products Images visibility", function () {
+  //   leftNav.get_LeftNav_TrendingProdict_Image().each(($e1, index, $list) => {
+  //     leftNav
+  //       .get_LeftNav_TrendingProdict_Image()
+  //       .eq(index)
+  //       .next()
+  //       .then(function (img) {
+  //         //eq is a funtion in cypress for indexing
+  //         expect(img).to.be.visible;
+  //       });
+  //   });
+  // });
+
+  // it("Trending Products titles visibility", function () {
+  //   leftNav.get_LeftNav_TrendingProdict_title().each(($e1, index, $list) => {
+  //     cy.log($e1.text());
+  //     expect($e1).to.be.visible;
+  //   });
+  // });
+  // it("Trending Products Discount price visibility", function () {
+  //   leftNav
+  //     .get_LeftNav_TrendingProdict_DiscPrice()
+  //     .each(($e1, index, $list) => {
+  //       cy.log($e1.text());
+  //       expect($e1).to.be.visible;
+  //     });
+  // });
+  // it("Trending Products  price visibility", function () {
+  //   leftNav.get_LeftNav_TrendingProdict_price().each(($e1, index, $list) => {
+  //     cy.log($e1.text());
+  //     expect($e1).to.be.visible;
+  //   });
+  // });
+  // it("Trending Product link verification", function () {
+  //   leftNav.get_LeftNav_TrendingProdict_title().each(($e1, index, $list) => {
+  //     cy.log($e1.attr("href"));
+
+  //     leftNav.get_LeftNav_TrendingProdict_title().eq(index).click();
+
+  //     cy.title().should("include", $e1.text());
+
+  //     cy.go("back");
+  //   });
+  // });
+  it("Customer widget title visibility",function(){
+
+    leftNav.get_LeftNav_CustWidget_title().should('include.text',this.data.cusWidgetTitle)
   })
-  it("Left Nav Banner2 Visibility",function(){
-
-    leftNav.get_LeftNavBanner2().should('be.visible')
-  })
-
-  it('verify left Nav sub2 Icons',function(){
-
-    leftNav.get_LeftNavSub2Icons().each(($e1,index,$list)=>{
-
-
-      cy.get("div[class*='elementor-widget-container']  div[class='icon']").eq(index).next().then(function(element){
-
-        expect(element).to.be.visible
-      })
-    })
-  })
-
-  it('verify left Nav sub 2 texts',function(){
-
-    leftNav.get_LeftNavSub2Text().each(($e1,index,$list)=>{
-
-      el
-    
-    })
-  })
-})
+});

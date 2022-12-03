@@ -20,5 +20,13 @@
   "valueOfDaynAV": " Value of the Day",
   "Top100Nav": " Top 100 Offers",
   "NewArrival": " New Arrivals",
-  "SubNav2": ["Download the Bacola App to your Phone.","Order now so you dont miss the opportunities.","Your order will arrive at your door in 15 minutes."]
+  "SubNav2": ["Download the Bacola App to your Phone.","Order now so you dont miss the opportunities.","Your order will arrive at your door in 15 minutes."],
+  "AppDownTxt" : "Download the Bacola App to your Phone.",
+  "orderNowTxt" : "Order now so you dont miss the opportunities.",
+  "orderariveTxt" : "Your order will arrive at your door in 15 minutes.",
+  "trendingProductTxt" : "Trending Products",
+  "cusWidgetTitle" : "Customer Comment",
+  "cusWidgetEntryTitle" : "The Best Marketplace ",
+  "cusWidgetEnteryMsg" : "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut."
+
 }
