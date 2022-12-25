@@ -59,7 +59,7 @@ class HomePageLeftNavOB {
     return cy.get("div[data-id='23c1373']  h4.entry-title")
   }
   get_LeftNav_CustWidget_EnteryMsg(){
-    return cy.get("div[data-id='23c1373']  h4.entry-message")
+    return cy.get('.entry-message')
   }
   get_LeftNav_CustWidget_Img(){
     return cy.get("div[data-id='23c1373']  div.avatar")
@@ -69,6 +69,9 @@ class HomePageLeftNavOB {
   }
   get_LeftNav_CustWidget_cusDesignation(){
     return cy.get("div[data-id='23c1373']  span.customer-mission")
+  }
+  get_LeftNav_Beverage_IMG(){
+    return cy.get(".category-image a img[alt='Beverages']")
   }
 }
 export default HomePageLeftNavOB;

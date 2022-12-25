@@ -1,8 +1,11 @@
 /// <reference types="Cypress" />
 import HomePageLeftNav from "../pageObjects/HomePageLeftNavOB.js";
 
+import HomePageOB from "../pageObjects/HomePageOB.js";
 describe("HomePage Test Suit", function () {
   const leftNav = new HomePageLeftNav();
+  const HomeOB = new HomePageOB();
+  var titleTxt,titleTxt2,i=0;
 
   beforeEach(function () {
     cy.viewport(1600, 1200);
@@ -240,8 +243,57 @@ describe("HomePage Test Suit", function () {
   //     cy.go("back");
   //   });
   // });
-  it("Customer widget title visibility",function(){
+  // it("Customer widget entery title visibility", function () {
+  //   leftNav.get_LeftNav_CustWidget_EnteryTitle().should("be.visible");
+  // });
+  // it("Customer widget entery message visibility", function () {
+  //   leftNav.get_LeftNav_CustWidget_EnteryMsg().should("be.visible");
+  // });
+  // it("Customer widget customer name visibility", function () {
+  //   leftNav.get_LeftNav_CustWidget_cusName().should("be.visible");
+  // });
+  // it("Customer widget customer designation visibility", function () {
+  //   leftNav.get_LeftNav_CustWidget_cusDesignation().should("be.visible");
+  // });
+  // it("Left Nav Baverage Image visibility", function () {
+  //   leftNav.get_LeftNav_Beverage_IMG().should("be.visible").cl;
+  // });
+  // it("Left Nav Baverage Link working", function () {
+  //   leftNav.get_LeftNav_Beverage_IMG().click();
 
-    leftNav.get_LeftNav_CustWidget_title().should('include.text',this.data.cusWidgetTitle)
-  })
+  //   cy.title().should("include", this.data.BeveragePageTitle);
+  //   cy.go("back");
+  // });
+
+    it("Best Seller Product Title Verification",function(){
+
+      HomeOB.get_bestSeller_ProductTitleTxt().contains(this.data.bestSellerTxt).scrollIntoView().should('be.visible')
+    })
+    it("Best Seller Product tagline text Verification",function(){
+
+      HomeOB.get_bestSeller_ProductTitleTxt().contains(this.data.bestSeller_TagLineTxt).should('be.visible')
+    })
+    it("Verify Best seller Product Previous Button",function(){
+     
+    
+        HomeOB.get_bestSellerProduct_titles().each(($e1,index,$list)=>{
+          cy.log()
+          titleTxt=$e1.text()
+          cy.log(titleTxt)
+          HomeOB.get_bestSellerProduct_PrevBtn().click()
+          titleTxt2=$e1.text()
+          cy.log(titleTxt2)
+         cy.log(index)
+        
+         if(index==4)
+         {
+          return false
+         }
+          // expect(titleTxt).to.not.be.eq(titleTxt2)
+        })
+
+        // HomeOB.get_bestSellerProduct_PrevBtn().click()
+        
+      
+    })
 });

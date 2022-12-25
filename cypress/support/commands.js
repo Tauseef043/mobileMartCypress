@@ -50,4 +50,3 @@ Cypress.Commands.add('Mouse Hover', (hoverr) => {
      })
 
 })
-
