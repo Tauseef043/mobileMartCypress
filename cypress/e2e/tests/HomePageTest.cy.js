@@ -5,7 +5,9 @@ import HomePageOB from "../pageObjects/HomePageOB.js";
 describe("HomePage Test Suit", function () {
   const leftNav = new HomePageLeftNav();
   const HomeOB = new HomePageOB();
-  var titleTxt,titleTxt2,i=0;
+  var titleTxt,
+    titleTxt2,
+    i = 0;
 
   beforeEach(function () {
     cy.viewport(1600, 1200);
@@ -265,35 +267,122 @@ describe("HomePage Test Suit", function () {
   //   cy.go("back");
   // });
 
-    it("Best Seller Product Title Verification",function(){
+  // it("Best Seller Product Title Verification", function () {
+  //   HomeOB.get_bestSeller_ProductTitleTxt()
+  //     .contains(this.data.bestSellerTxt)
+  //     .scrollIntoView()
+  //     .should("be.visible");
+  // });
+  // it("Best Seller Product tagline text Verification", function () {
+  //   HomeOB.get_bestSeller_ProductTitleTxt()
+  //     .contains(this.data.bestSeller_TagLineTxt)
+  //     .should("be.visible");
+  // });
 
-      HomeOB.get_bestSeller_ProductTitleTxt().contains(this.data.bestSellerTxt).scrollIntoView().should('be.visible')
-    })
-    it("Best Seller Product tagline text Verification",function(){
+  // it("Verify best seller viewALl button",function(){
+  //   HomeOB.get_bestSeller_ProductTitleTxt().contains('View All').click()
+  //   cy.url().should('contain','popularity');
+  //   cy.go('back')
+  // })
 
-      HomeOB.get_bestSeller_ProductTitleTxt().contains(this.data.bestSeller_TagLineTxt).should('be.visible')
-    })
-    it("Verify Best seller Product Previous Button",function(){
+  // it("Verify Best seller Product Previous Button", function () {
+  //   HomeOB.get_bestSellerProduct_titles().each(($e1, index, $list) => {
+  //     titleTxt = $e1.text();
+  //     // cy.log(titleTxt)
+  //     HomeOB.get_bestSellerProduct_PrevBtn().should("be.enabled")
+
+  //     if (index == 4) {
+  //       return false;
+  //     }
+  //   });
+
+  // });
+  // it("Verify add to wihList", function () {
+  //   HomeOB.get_bestSellerProduct_addTo_WishList().each(($btn, index) => {
+  //     if (index == 1) {
+  //       cy.wrap($btn).invoke("show").click({ force: true });
+  //       cy.contains("Close").should("be.visible").click();
+  //     }
+  //   });
+  // });
+
+  // it("Verify View wihList Button", function () {
+  //   HomeOB.get_bestSellerProduct_addTo_WishList().each(($btn, index) => {
+  //     if (index == 1) {
+  //       cy.wrap($btn).invoke("show").click({ force: true });
+  //       cy.contains("View Wishlist").should("be.visible").click();
+  //       cy.title().should("eq", this.data.wishListPage)
+  //       cy.go('back')
+
+  //     }
+  //   });
+  // });
+  // it("verify bestSeller badges",function(){
+
+  //   HomeOB.get_bestSellerProduct_Badges().each(($btn,index) =>{
+  //     cy.wrap($btn).then(function(element){
+  //       titleTxt=element.text()
+  //       // cy.log(titleTxt)
+  //       expect(titleTxt).to.be.exist
+  //     })
+  //   })
+
+  // })
+  // it("verify bestSeller Product Title",function(){
+
+  //   HomeOB.get_bestSellerProductCard_Titles().each(($btn,index) =>{
+  //     cy.wrap($btn).then(function(element){
+  //       titleTxt=element.text()
+  //       cy.log(titleTxt)
+  //       expect(element.text()).to.be.exist;
+  //     })
+  //   })
+
+  // })
+  // it("Verify bestSeller product rating start",function(){
+  //   HomeOB.get_bestSellerProduct_RatingStars().each(($btn,index)=>{
+  //     cy.wrap($btn).should('exist')
+  //   })
+  // })
+  // it("Verify bestSeller product rating count",function(){
+  //   HomeOB.get_bestSellerProduct_RatingStarsCount().each(($btn,index)=>{
+  //     cy.wrap($btn).then(function(element){
+
+  //       expect(element.text()).to.be.exist
+  //     })
+  //   })
+  // })
+  // it("Verify bestSeller product Orignal price",function(){
+  //   HomeOB.get_bestSellerProduct_OrignalPrice().each(($btn,index)=>{
+  //     cy.wrap($btn).then(function(element){
+  //       titleTxt=element.text()
+  //       cy.log(titleTxt)
+  //       expect(element.text()).to.be.exist
+  //     })
+  //   })
+  // })
+  // it("Verify bestSeller product Discounted price",function(){
+  //   HomeOB.get_bestSellerProduct_DiscPrice().each(($btn,index)=>{
+  //     cy.wrap($btn).then(function(element){
+  //       titleTxt=element.text()
+  //       cy.log(titleTxt)
+  //       expect(element.text()).to.be.exist
+  //     })
+  //   })
+  // })
+  it("Verify bestSeller product Images", function () {
+    HomeOB.get_bestSellerProduct_PrevBtn().scrollIntoView();
+    HomeOB.get_bestSellerProduct_Images().each(($btn, index) => {
+      // expect($btn.text()).to.be.visible
+      expect($btn).to.be.exist;
+    });
+  });
+  it("Verify Add to cart Button", function () {
+    HomeOB.get_bestSellerProductCard_AddToCartBtn().each(($btn, index) => {
      
-    
-        HomeOB.get_bestSellerProduct_titles().each(($e1,index,$list)=>{
-          cy.log()
-          titleTxt=$e1.text()
-          cy.log(titleTxt)
-          HomeOB.get_bestSellerProduct_PrevBtn().click()
-          titleTxt2=$e1.text()
-          cy.log(titleTxt2)
-         cy.log(index)
-        
-         if(index==4)
-         {
-          return false
-         }
-          // expect(titleTxt).to.not.be.eq(titleTxt2)
-        })
-
-        // HomeOB.get_bestSellerProduct_PrevBtn().click()
-        
-      
-    })
+      if (index <= 3) {
+        cy.wrap($btn).click();
+      }
+    });
+  });
 });

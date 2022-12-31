@@ -32,7 +32,12 @@ Cypress.Commands.add('hoverr', (element,clickElement) => {
     cy.contains(clickElement).click({force: true} )
     
 });
-
+//mouse hover
+Cypress.Commands.add('mouseAction', (element) => {
+    cy.get(element).invoke('show');
+    cy.contains(element).click({force: true} )
+    
+});
 
 // Later in your tests you can call:
 
