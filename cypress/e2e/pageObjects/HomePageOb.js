@@ -70,5 +70,13 @@ class HomePageOB {
   {
     return cy.get("div[class*=' product-type-2'] .content-wrapper div[class*='cart-with-quantity'] input[class*='qty text']")
   }
+  get_bestSellerProduct_addToCartSuccessMSG()
+  {
+    return cy.get(".woocommerce-message")
+  }
+  get_bestSellerProductCard_CartBoxCountTxt()
+  {
+return cy.get("div[class*='header-cart'] span[class='cart-count-icon']")
+  }
 }
 export default HomePageOB;
