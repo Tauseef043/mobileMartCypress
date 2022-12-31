@@ -379,10 +379,35 @@ describe("HomePage Test Suit", function () {
   });
   it("Verify Add to cart Button", function () {
     HomeOB.get_bestSellerProductCard_AddToCartBtn().each(($btn, index) => {
-     
-      if (index <= 3) {
-        cy.wrap($btn).click();
+      if (index == 3) {
+        cy.wrap($btn)
+          .click({ multiple: true })
+          .then(function () {
+            //   // Cypress.config('defaultCommandTimeout', 100000)
+
+            cy.get(".woocommerce-message", { timeout: 10000 }).should(
+              "be.visible"
+            ).then(()=>{
+              cy.get(
+                "div[class*='header-cart'] span[class='cart-count-icon']"
+              ).then((text) => {
+                expect(text.text()).equal("1");
+              });
+            })
+            //cart Box
+         
+          });
+
       }
     });
   });
+  it("Best Seller Cart with Quantity PLus Button",function(){
+
+    HomeOB.get_bestSellerProduct_CartWithQuantityPlusBtn().each(($btn,index)=>{
+      if(index==3)
+      {
+        cy.wrap($btn).click()
+      }
+    })
+  })
 });

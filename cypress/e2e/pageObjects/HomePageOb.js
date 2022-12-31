@@ -58,5 +58,17 @@ class HomePageOB {
   get_bestSellerProduct_Images(){
     return cy.get("div[class*='product-wrapper product-type-2'] .thumbnail-wrapper a img")
   }
+  get_bestSellerProduct_CartWithQuantityPlusBtn()
+  {
+    return cy.get("div[class*=' product-type-2'] .content-wrapper div[class*='cart-with-quantity'] div[class*='plus']")
+  }
+  get_bestSellerProduct_CartWithQuantityMinusBtn()
+  {
+    return cy.get("div[class*=' product-type-2'] .content-wrapper div[class*='cart-with-quantity'] div[class*='minus']")
+  }
+  get_bestSellerProduct_CartWithQuantityTxt()
+  {
+    return cy.get("div[class*=' product-type-2'] .content-wrapper div[class*='cart-with-quantity'] input[class*='qty text']")
+  }
 }
 export default HomePageOB;
