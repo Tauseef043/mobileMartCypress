@@ -78,9 +78,48 @@ class HomePageOB {
   }
   get_bestSellerProduct_addToCartSuccessMSG() {
     return cy.get(".woocommerce-message");
+    
   }
   get_bestSellerProductCard_CartBoxCountTxt() {
     return cy.get("div[class*='header-cart'] span[class='cart-count-icon']");
+  }
+  get_bestSellerProductCard_quickViewBtn()
+  {
+    return cy.get("div[class*='product-wrapper product-type-2'] .thumbnail-wrapper .product-buttons a[class*='quick-view-button']")
+  }
+  get_bestSellerProductCard_QuickView_Image()
+  {
+    return cy.get('#images > .slick-list > .slick-track > .slick-current > img')
+  }
+  get_bestSellerProductCard_QuickView_Title()
+  {
+    return cy.get('.product_title')
+  }
+  get_bestSellerProductCard_QuickView_Oringal_OrignalPrice()
+  {
+    return cy.get('.product-detail > .price > del > .woocommerce-Price-amount')
+  }
+  get_bestSellerProductCard_QuickView_DicImage()
+  {
+    return cy.get('.product-detail > .price > ins > .woocommerce-Price-amount')
+  }
+  get_bestSellerProductCard_QuickView_AddToCartBtn()
+  {
+    return cy.get('.single_add_to_cart_button')
+  }
+  get_bestSellerProductCard_QuickView_Images()
+  {
+    return cy.get("div[id='thumbnails'] div[class*='product-thumbnail'] img")
+  }
+  get_bestSellerProductCard_QUickViewDescription(){
+    return cy.get('.product-short-description > p')
+  }
+  get_bestSellerProductCard_QuickView_QuantityIncreaseDecrease(){
+    return cy.get("form[class='cart single-ajax'] .quantity div")
+  }
+  get_bestSellerProductCard_QuickView_QuantityCount()
+  {
+    return cy.get("form[class='cart single-ajax'] .quantity input")
   }
 }
 export default HomePageOB;
