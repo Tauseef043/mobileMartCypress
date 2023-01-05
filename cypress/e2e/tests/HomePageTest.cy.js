@@ -385,32 +385,46 @@ describe("HomePage Test Suit", function () {
           .then(function () {
             //   // Cypress.config('defaultCommandTimeout', 100000)
 
-            HomeOB.get_bestSellerProduct_addToCartSuccessMSG({ timeout: 10000 }).should(
-              "be.visible"
-            )
+            HomeOB.get_bestSellerProduct_addToCartSuccessMSG({
+              timeout: 10000,
+            }).should("be.visible");
             // .then(()=>{
             //  HomeOB.get_bestSellerProductCard_CartBoxCountTxt().then((text) => {
             //     expect(text.text()).equal("1");
             //   });
             // })
             //cart Box
-         
           });
-
       }
     });
   });
-  it("Best Seller Cart with Quantity PLus Button",function(){
-
-    HomeOB.get_bestSellerProduct_CartWithQuantityPlusBtn().each(($btn,index)=>{
-      if(index==3)
-      {
-       
-          cy.wrap($btn).click().should('not.be.disabled')
-
-        
-        
+  it("Best Seller Cart with Quantity PLus Button", function () {
+    HomeOB.get_bestSellerProduct_CartWithQuantityPlusBtn().each(
+      ($btn, index) => {
+        if (index == 3) {
+          while (i <= 2) {
+            cy.wrap($btn).click().should("not.be.disabled");
+            i++;
+          }
+        }
       }
-    })
-  })
+    );
+  });
+  it("Best Seller Cart with Quantity Minus Button", function () {
+    HomeOB.get_bestSellerProduct_CartWithQuantityMinusBtn().each(
+      ($btn, index) => {
+        if (index == 3) {
+          while (i <= 2) {
+            cy.wrap($btn).click().should("not.be.disabled");
+
+            i++;
+          }
+        }
+      }
+    );
+
+
+
+
+  });
 });
