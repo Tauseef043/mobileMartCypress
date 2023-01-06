@@ -121,5 +121,25 @@ class HomePageOB {
   {
     return cy.get("form[class='cart single-ajax'] .quantity input")
   }
+  get_bestSellerProductCard_QuickView_AddToWishListBtn()
+  {
+    return cy.get(".product-actions .tinvwl_add_to_wishlist-text")
+  }
+  get_bestSellerProductCard_QuickView_CloseBtn()
+  {
+    return cy.get("button[title='Close (Esc)']")
+  }
+  get_bestSellerProductCardBelow_banner1()
+  {
+    return cy.get(".site-module.module-banner.wide .banner-wrapper")
+  }
+  get_hotProductTxt()
+  {
+    return cy.get(".site-module.module-hot-product .entry-title")
+  }
+  get_hotProductEnteryDecTxt()
+  {
+    return cy.get(".site-module.module-hot-product .entry-description")
+  }
 }
 export default HomePageOB;

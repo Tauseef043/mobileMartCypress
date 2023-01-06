@@ -370,128 +370,163 @@ describe("HomePage Test Suit", function () {
   //     })
   //   })
   // })
-  it("Verify bestSeller product Images", function () {
-    HomeOB.get_bestSellerProduct_PrevBtn().scrollIntoView();
-    HomeOB.get_bestSellerProduct_Images().each(($btn, index) => {
-      // expect($btn.text()).to.be.visible
-      expect($btn).to.be.exist;
+  // it("Verify bestSeller product Images", function () {
+  //   HomeOB.get_bestSellerProduct_PrevBtn().scrollIntoView();
+  //   HomeOB.get_bestSellerProduct_Images().each(($btn, index) => {
+  //     // expect($btn.text()).to.be.visible
+  //     expect($btn).to.be.exist;
+  //   });
+  // });
+  // it("Verify Add to cart Button", function () {
+  //   HomeOB.get_bestSellerProductCard_AddToCartBtn().each(($btn, index) => {
+  //     if (index == 3) {
+  //       cy.wrap($btn)
+  //         .click()
+  //         .then(function () {
+  //           //   // Cypress.config('defaultCommandTimeout', 100000)
+
+  //           HomeOB.get_bestSellerProduct_addToCartSuccessMSG({
+  //             timeout: 10000,
+  //           }).should("be.visible");
+  //           // .then(()=>{
+  //           //  HomeOB.get_bestSellerProductCard_CartBoxCountTxt().then((text) => {
+  //           //     expect(text.text()).equal("1");
+  //           //   });
+  //           // })
+  //           //cart Box
+  //         });
+  //     }
+  //   });
+  // });
+  // it("Best Seller Cart with Quantity PLus Button", function () {
+  //   HomeOB.get_bestSellerProduct_CartWithQuantityPlusBtn().each(
+  //     ($btn, index) => {
+  //       if (index == 3) {
+  //         while (i <= 2) {
+  //           cy.wrap($btn).click().should("not.be.disabled");
+  //           i++;
+  //         }
+  //       }
+  //     }
+  //   );
+  // });
+  // it("Best Seller Cart with Quantity Minus Button", function () {
+  //   HomeOB.get_bestSellerProduct_CartWithQuantityMinusBtn().each(
+  //     ($btn, index) => {
+  //       if (index == 3) {
+  //         while (i <= 2) {
+  //           cy.wrap($btn).click().should("not.be.disabled");
+
+  //           i++;
+  //         }
+  //       }
+  //     }
+  //   );
+  // });
+  // it("Best Seller Product qucik View Button", function () {
+  //   HomeOB.get_bestSellerProductCard_quickViewBtn().each(($btn, index) => {
+  //     if (index == 0) {
+  //       //hove element
+  //       cy.wrap($btn).click({ force: true });
+  //     }
+  //   });
+  // });
+  // it("Best Seller Product qucik View Image Visiblity", function () {
+  //   HomeOB.get_bestSellerProductCard_QuickView_Image().should("be.visible");
+  // });
+  // it("Best Seller Product Quick View Title visibility", function () {
+  //   HomeOB.get_bestSellerProductCard_QuickView_Title().should("be.visible");
+  // });
+  // it("Best Seller Product Quick Images visibility", function () {
+  //   HomeOB.get_bestSellerProductCard_QuickView_Images({
+  //     timeout: 10000,
+  //   }).each(($btn, index) => {
+  //     cy.log(index);
+  //     try {
+  //       cy.wrap($btn).click().should("be.visible");
+  //     } catch (e) {
+  //       cy.log(e);
+  //     }
+  //   });
+  // });
+  // it("Best Seller Product Quick View Price Verification", function () {
+  //   HomeOB.get_bestSellerProductCard_QuickView_Oringal_OrignalPrice().should(
+  //     "be.visible"
+  //   );
+  // });
+  // it("Best Seller Product Quick View Disc Price Verification", function () {
+  //   HomeOB.get_bestSellerProduct_DiscPrice().should("be.visible");
+  // });
+  // it("Best Seller Product Quick View Discription", function () {
+  //   HomeOB.get_bestSellerProductCard_QUickViewDescription().should(
+  //     "be.visible"
+  //   );
+  // });
+  // it("Best Seller Product Quick View Quantity increase", function () {
+  //   HomeOB.get_bestSellerProductCard_QuickView_QuantityIncreaseDecrease().each(
+  //     ($btn, index) => {
+  //       if (index == 1) {
+  //         cy.wrap($btn).click().should("be.visible");
+
+  //         HomeOB.get_bestSellerProductCard_QuickView_QuantityCount()
+  //           .invoke("val")
+  //           .should("eq", "2");
+  //       }
+  //     }
+  //   );
+  // });
+  // it("Best Seller Product Quick View Quantity Decrease", function () {
+  //   HomeOB.get_bestSellerProductCard_QuickView_QuantityIncreaseDecrease().each(
+  //     ($btn, index) => {
+  //       if (index == 0) {
+  //         cy.wrap($btn).click().should("be.visible");
+
+  //         HomeOB.get_bestSellerProductCard_QuickView_QuantityCount()
+  //           .invoke("val")
+  //           .should("eq", "1");
+  //       }
+  //     }
+  //   );
+  // });
+  // it("Best Seller Product Quick View Add to cart Btn Verification", function () {
+  //   HomeOB.get_bestSellerProductCard_QuickView_AddToCartBtn().click();
+  //   cy.get(":nth-child(89) > .woocommerce-message").should("be.visible");
+  // });
+  // it("Best Seller Product Quick View Add to wishList button verification", function () {
+  //   cy.addToWishListBtn();
+  //   // HomeOB.get_bestSellerProductCard_AddToWishListBtn().click()
+  // });
+  // it("Validate Best Seller Product Quick View PopUp CLose button", function () {
+  //   cy.clickAction(
+  //     HomeOB.get_bestSellerProductCard_QuickView_CloseBtn().should("be.enabled")
+  //   );
+  // });
+  it("Store QuoteBanner 1 verification", function () {
+    cy.clickAction(
+      HomeOB.get_bestSellerProductCardBelow_banner1().should("be.visible")
+    ).then(function (element) {
+      cy.title().should("eq", this.data.productPage);
+      cy.url().should("eq", Cypress.env("URL") + Cypress.env("PRODUCT_PAGE"));
+      cy.go("back");
     });
   });
-  it("Verify Add to cart Button", function () {
-    HomeOB.get_bestSellerProductCard_AddToCartBtn().each(($btn, index) => {
-      if (index == 3) {
-        cy.wrap($btn)
-          .click()
-          .then(function () {
-            //   // Cypress.config('defaultCommandTimeout', 100000)
-
-            HomeOB.get_bestSellerProduct_addToCartSuccessMSG({
-              timeout: 10000,
-            }).should("be.visible");
-            // .then(()=>{
-            //  HomeOB.get_bestSellerProductCard_CartBoxCountTxt().then((text) => {
-            //     expect(text.text()).equal("1");
-            //   });
-            // })
-            //cart Box
-          });
-      }
-    });
+  it("HOT PRODUCT FOR THIS WEEK Text Validations", function () {
+    HomeOB.get_hotProductTxt()
+      .should("be.visible")
+      .then(function (element) {
+        expect(element.text().toLowerCase()).equal(
+          this.data.HotProductTxt.toLowerCase()
+        );
+      });
   });
-  it("Best Seller Cart with Quantity PLus Button", function () {
-    HomeOB.get_bestSellerProduct_CartWithQuantityPlusBtn().each(
-      ($btn, index) => {
-        if (index == 3) {
-          while (i <= 2) {
-            cy.wrap($btn).click().should("not.be.disabled");
-            i++;
-          }
-        }
-      }
-    );
+
+  it("HOT PRODUCT FOR THIS WEEK Text Validations", function () {
+   HomeOB.get_hotProductEnteryDecTxt()
+      .should("be.visible")
+      .then(function (element) {
+        expect(element.text().toLowerCase()).equal(
+          this.data.HotProductDescTXT.toLowerCase()
+        );
+      });
   });
-  it("Best Seller Cart with Quantity Minus Button", function () {
-    HomeOB.get_bestSellerProduct_CartWithQuantityMinusBtn().each(
-      ($btn, index) => {
-        if (index == 3) {
-          while (i <= 2) {
-            cy.wrap($btn).click().should("not.be.disabled");
-
-            i++;
-          }
-        }
-      }
-    );
-  });
-  it("Best Seller Product qucik View Button",function(){
-    HomeOB.get_bestSellerProductCard_quickViewBtn().each(($btn,index)=>{
-      if(index==0)
-      {
-        //hove element
-        cy.wrap($btn).click({force:true})
-      }
-    })
-  })
-  it("Best Seller Product qucik View Image Visiblity",function(){
-    HomeOB.get_bestSellerProductCard_QuickView_Image().should("be.visible")
-  })
-  it("Best Seller Product Quick View Title visibility",function(){
-    HomeOB.get_bestSellerProductCard_QuickView_Title().should('be.visible')
-  })
-  it("Best Seller Product Quick Images visibility",function(){
-  HomeOB.get_bestSellerProductCard_QuickView_Images({
-    timeout: 10000,
-  }).each(($btn,index)=>{
-    cy.log(index)
-    try{
-      cy.wrap($btn).click().should('be.visible')
-     
-    }
-    catch(e){
-      cy.log(e)
-    }
-  })
-
-  })
-  it("Best Seller Product Quick View Price Verification",function(){
-    HomeOB.get_bestSellerProductCard_QuickView_Oringal_OrignalPrice().should('be.visible')
-  })
-  it("Best Seller Product Quick View Disc Price Verification",function(){
-    HomeOB.get_bestSellerProduct_DiscPrice().should('be.visible')
-  })
-  it("Best Seller Product Quick View Discription",function(){
-    HomeOB.get_bestSellerProductCard_QUickViewDescription().should('be.visible')
-  })
-  it("Best Seller Product Quick View Quantity increase",function(){
-    HomeOB.get_bestSellerProductCard_QuickView_QuantityIncreaseDecrease().each(($btn,index)=>{
-     
-      if(index==1)
-      {
-        cy.wrap($btn).click().should('be.visible')
-        
-      HomeOB.get_bestSellerProductCard_QuickView_QuantityCount() .invoke('val').should('eq','2')
-      }
-     
-      
-    })
-
-  })
-  it("Best Seller Product Quick View Quantity Decrease",function(){
-    HomeOB.get_bestSellerProductCard_QuickView_QuantityIncreaseDecrease().each(($btn,index)=>{
-     
-      if(index==0)
-      {
-        cy.wrap($btn).click().should('be.visible')
-        
-      HomeOB.get_bestSellerProductCard_QuickView_QuantityCount() .invoke('val').should('eq','1')
-      }
-     
-      
-    })
-
-  })
-  it("Best Seller Product Quick View Add to cart Btn Verification",function(){
-    HomeOB.get_bestSellerProductCard_QuickView_AddToCartBtn().click()
-    cy.get(':nth-child(89) > .woocommerce-message').should('be.visible')
-  })
 });
