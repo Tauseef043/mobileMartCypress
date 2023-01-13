@@ -1,4 +1,8 @@
 class HomePageOB {
+  get_bestSellerProductCard_ViewAllBtn()
+  {
+    return cy.get(".site-module.module-carousel .button.button-info-default.xsmall.rounded")
+  }
   get_bestSeller_ProductTitleTxt() {
     return cy.get(".module-header");
   }
@@ -140,6 +144,23 @@ class HomePageOB {
   get_hotProductEnteryDecTxt()
   {
     return cy.get(".site-module.module-hot-product .entry-description")
+  }
+  get_hotProductViewAllBtn()
+  {
+    return cy.get(".site-module.module-hot-product .module-header").contains("View All")
+  }
+  get_hotProductBannerIMG(){
+    return cy.get(".site-module.module-hot-product .module-body .thumbnail-wrapper img")
+  }
+  get_hotProductBannerDiscTXT(){
+    return cy.get(".site-module.module-hot-product .module-body .hot-sale")
+  }
+  get_hotProductBannerTitleTXT(){
+    return cy.get(".hot-product.products .product .content-wrapper .product-title")
+  }
+  get_hotProductBanner()
+  {
+    return cy.get('.product > .overlay-link')
   }
 }
 export default HomePageOB;

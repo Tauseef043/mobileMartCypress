@@ -17,6 +17,8 @@ module.exports = defineConfig({
     {
       URL:"https://klbtheme.com/bacola",
       PRODUCT_PAGE:"/shop/?filter_cat=58",
+      SALE_PRODUCT:"/shop/?on_sale=onsale",
+      POPULAR_PRODUCT_PAGE:"/shop/?orderby=popularity",
 
     },
   
