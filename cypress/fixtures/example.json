@@ -38,5 +38,9 @@
   "cusWidgetEntryTitle": "The Best Marketplace ",
   "cusWidgetEnteryMsg": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut.",
   "HotProductTxt":"HOT PRODUCT FOR THIS WEEK",
-  "HotProductDescTXT":"Dont miss this opportunity at a special discount just for this week."
+  "HotProductDescTXT":"Dont miss this opportunity at a special discount just for this week.",
+  "NewProductDesc": "New products with updated stocks.",
+  "ViewAllButton": "View All",
+  "NewProduct": "NEW PRODUCTS"
+  
 }

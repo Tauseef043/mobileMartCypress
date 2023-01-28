@@ -135,7 +135,7 @@ class HomePageOB {
   }
   get_bestSellerProductCardBelow_banner1()
   {
-    return cy.get(".site-module.module-banner.wide .banner-wrapper")
+    return cy.get(".site-module.module-banner.wide .banner-wrapper  .banner-thumbnail img")
   }
   get_hotProductTxt()
   {
@@ -147,7 +147,7 @@ class HomePageOB {
   }
   get_hotProductViewAllBtn()
   {
-    return cy.get(".site-module.module-hot-product .module-header").contains("View All")
+    return cy.get(".site-module.module-hot-product .module-header div a")
   }
   get_hotProductBannerIMG(){
     return cy.get(".site-module.module-hot-product .module-body .thumbnail-wrapper img")
@@ -161,6 +161,21 @@ class HomePageOB {
   get_hotProductBanner()
   {
     return cy.get('.product > .overlay-link')
+  }
+  get_bestSellerProduct_QuickViewCartSuccessMSG(){
+    return cy.get(":nth-child(89) > .woocommerce-message")
+  }
+  get_newProduct_Txt()
+  {
+    return cy.get('.elementor-element-f9afb9a > .elementor-widget-container > .site-module > .module-header > :nth-child(1) > .entry-title')
+  }
+  get_newProduct_DescTxt()
+  {
+    return cy.get('.site-module.module-products .module-header .column .entry-description')
+  }
+  get_newProduct_ViewAllBtn()
+  {
+    return cy.get(".site-module.module-products .module-header .column a")
   }
 }
 export default HomePageOB;

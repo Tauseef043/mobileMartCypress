@@ -19,6 +19,7 @@ module.exports = defineConfig({
       PRODUCT_PAGE:"/shop/?filter_cat=58",
       SALE_PRODUCT:"/shop/?on_sale=onsale",
       POPULAR_PRODUCT_PAGE:"/shop/?orderby=popularity",
+      SHOP:"/shop"
 
     },
   
