@@ -177,5 +177,45 @@ class HomePageOB {
   {
     return cy.get(".site-module.module-products .module-header .column a")
   }
+  get_newProduct_AddToWishList()
+  {
+    return cy.get(".site-module.module-products .product-wrapper.product-type-1 div[class*='tinvwl-the_content']")
+  }
+  
+  get_newProduct_ViewToWishList(){
+    return cy.get(".site-module.module-products .product-wrapper.product-type-1 a[class*='quick-view-button']")
+  }
+  getViewWishList()
+  {
+    return cy.get('.tinvwl_button_view')
+  }
+  get_NEwProductTitle()
+  {
+    return cy.get(".product-wrapper.product-type-1 .product-title a")
+  }
+  get_newProduct_RatingStar()
+  {
+    return cy.get(".product-wrapper.product-type-1 .product-rating .star-rating")
+  }
+  get_newProduct_RatingCount()
+  {
+    return cy.get(".product-wrapper.product-type-1 .product-rating .count-rating")
+  }
+  get_newProduct_OrignalPrice()
+  {
+    return cy.get(".product-wrapper.product-type-1 .price del")
+  }
+  get_newProduct_DiscPrice()
+  {
+    return cy.get(".product-wrapper.product-type-1 .price ins")
+  }
+  get_NEwProductAddToCartBtn()
+  {
+    return cy.get(".product-wrapper.product-type-1 .product-button-group.cart-with-quantity a")
+  }
+  get_NEwProductIMG()
+  {
+    return cy.get(".product-wrapper.product-type-1 .thumbnail-wrapper a img")
+  }
 }
 export default HomePageOB;

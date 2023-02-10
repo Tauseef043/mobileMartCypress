@@ -109,7 +109,7 @@ Cypress.Commands.add("VALIDATE_CART_WITH_QUANITY_BTN", (WebElement) => {
 Cypress.Commands.add("VALIDATE_ADD_TO_WISHLISTS_BTN", (webElement) => {
   webElement.each(($btn, index) => {
     if (index == 1) {
-      cy.wrap($btn).invoke("show").click({ force: true });
+      cy.wrap($btn).invoke("show").click();
       cy.contains("Close").should("be.visible").click();
     }
   });
@@ -118,7 +118,7 @@ Cypress.Commands.add("VALIDATE_ADD_TO_WISHLISTS_BTN", (webElement) => {
 Cypress.Commands.add("VALIDATE_VIEW__WISHLIST_BTN", (webElement, element) => {
   webElement.each(($btn, index) => {
     if (index == 1) {
-      cy.wrap($btn).invoke("show").click({ force: true });
+      cy.wrap($btn).invoke("show").click();
       cy.contains("View Wishlist").should("be.visible").click();
       cy.title().should("eq", element);
       cy.go("back");
@@ -144,3 +144,22 @@ Cypress.Commands.add("VALIDATE_CART_MSG", (WebElement) => {
   // Cypress.config('defaultCommandTimeout', 100000)
   cy.waitUntil(() => WebElement.contains("has been added to your cart"));
 });
+
+Cypress.Commands.add("VALIDATE_ADD_TO_CART_BUTTON", (WebElement,webElement2) => {
+ 
+
+
+  WebElement.each(($btn, index) => {
+        
+          if(index==3)
+          {
+            cy.wait(3000)
+            cy.wrap($btn).should('exist').trigger('mouseover',{force: true}).trigger("click", {force: true});
+            
+          
+          }
+ 
+
+
+});
+})

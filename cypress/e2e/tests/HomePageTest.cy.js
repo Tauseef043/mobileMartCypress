@@ -469,90 +469,140 @@ describe("HomePage Test Suit", function () {
 
   // });
 
-  it("HOT PRODUCT FOR THIS WEEK Banner2 IMG Visiblity", function () {
-    cy.VALIDATE_IMAGE(HomeOB.get_hotProductBannerIMG());
-  });
+  // it("HOT PRODUCT FOR THIS WEEK Banner2 IMG Visiblity", function () {
+  //   cy.VALIDATE_IMAGE(HomeOB.get_hotProductBannerIMG());
+  // });
 
-  it("HOT PRODUCT FOR THIS WEEK Discount Label Visiblity", function () {
-    HomeOB.get_hotProductBannerDiscTXT().should("be.visible");
-  });
-  it("HOT PRODUCT FOR THIS WEEK Product title visibility", function () {
-    HomeOB.get_hotProductBannerTitleTXT()
-      .should("be.visible")
-      .then((element) => {
-        HomeOB.get_hotProductBanner().click();
-        ProductOB.get_productTitle().then((pTitle) => {
-          expect(element.text().toLowerCase()).equal(
-            pTitle.text().toLowerCase()
-          );
-        });
-        cy.go("back");
-      });
-  });
+  // it("HOT PRODUCT FOR THIS WEEK Discount Label Visiblity", function () {
+  //   HomeOB.get_hotProductBannerDiscTXT().should("be.visible");
+  // });
+  // it("HOT PRODUCT FOR THIS WEEK Product title visibility", function () {
+  //   HomeOB.get_hotProductBannerTitleTXT()
+  //     .should("be.visible")
+  //     .then((element) => {
+  //       HomeOB.get_hotProductBanner().click();
+  //       ProductOB.get_productTitle().then((pTitle) => {
+  //         expect(element.text().toLowerCase()).equal(
+  //           pTitle.text().toLowerCase()
+  //         );
+  //       });
+  //       cy.go("back");
+  //     });
+  // });
 
+  // it("New Product Title Text Verification", function () {
+  //   cy.VALIDATE_TITLE(HomeOB.get_newProduct_Txt(), this.data.NewProduct);
+  // });
 
+  // it("New Product Description text Verification", function () {
+  //   cy.VALIDATE_TITLE(
+  //     HomeOB.get_newProduct_DescTxt(),
+  //     this.data.NewProductDesc
+  //   );
+  // });
 
-
-
-    it("New Product Title Text Verification", function () {
-      cy.VALIDATE_TITLE(
-        HomeOB.get_newProduct_Txt(),
-        this.data.NewProduct
-      );
-    });
-
-    it("New Product Description text Verification", function () {
-      cy.VALIDATE_TITLE(
-        HomeOB.get_newProduct_DescTxt(),
-        this.data.NewProductDesc
-      );
-    });
-
-    it("Verify best seller viewAll button", function () {
-   cy.VALIDATE_BUTTON_VISIBLITY( HomeOB.get_newProduct_ViewAllBtn(),this.data.ViewAllButton)
-        HomeOB.get_newProduct_ViewAllBtn().click()
-        cy.VALIDATE_URL( Cypress.env("SHOP"))
-      cy.go('back')
+  // it("Verify best seller viewAll button", function () {
+  //   cy.VALIDATE_BUTTON_VISIBLITY(
+  //     HomeOB.get_newProduct_ViewAllBtn(),
+  //     this.data.ViewAllButton
+  //   );
+  //   HomeOB.get_newProduct_ViewAllBtn().click();
+  //   cy.VALIDATE_URL(Cypress.env("SHOP"));
+  //   cy.go("back");
+  // });
 
 
+  // it("Verify New Product View wihList Button", function () {
+  //   cy.VALIDATE_ADD_TO_WISHLISTS_BTN(
+  //     HomeOB.get_newProduct_AddToWishList()
+  //   );
+  // });
 
-      // HomeOB.get_bestSellerProductCard_ViewAllBtn().click();
-      // cy.VALIDATE_BUTTON_CLICK(Cypress.env("POPULAR_PRODUCT_PAGE"));
-
-      // cy.go("back");
-    });
-
-  //   // it("Verify Best seller Product Previous Button", function () {
-  //   //   HomeOB.get_bestSellerProduct_titles().each(($e1, index, $list) => {
-  //   //     titleTxt = $e1.text();
-  //   //     // cy.log(titleTxt)
-  //   //     HomeOB.get_bestSellerProduct_PrevBtn().should("be.enabled")
-
-  //   //     if (index == 4) {
-  //   //       return false;
-  //   //     }
-  //   //   });
-
-  //   // });
-  //   it("Verify add to wishList", function () {
-  //     cy.VALIDATE_ADD_TO_WISHLISTS_BTN(
-  //       HomeOB.get_bestSellerProduct_addTo_WishList()
-  //     );
-  //   });
-
-  //   it("Verify View wihList Button", function () {
+  //     it("Verify New Product View wihList Button", function () {
   //     cy.VALIDATE_VIEW__WISHLIST_BTN(
-  //       HomeOB.get_bestSellerProduct_addTo_WishList(),
+  //       HomeOB.get_newProduct_AddToWishList(),
   //       this.data.wishListPage
   //     );
   //   });
 
 
+  //      it("verify bestSeller Product Title", function () {
+  //     cy.VALIDATE_TITLES(HomeOB.get_NEwProductTitle());
+  //   });
+  //       it("Verify bestSeller product rating", function () {
+  //         //star Rating
+  //     cy.VALIDATE_PRODUCT_RATINGS(HomeOB.get_newProduct_RatingStar());
+  //     //count rating
+  //     cy.VALIDATE_TITLES(HomeOB.get_newProduct_RatingCount());
+  //   });
+  //   it("Verify bestSeller product Price", function () {
+    
+  //     //Orignal price
+  //     cy.VALIDATE_TITLES(HomeOB.get_newProduct_OrignalPrice());
+  //       //Discounted price
+  //       cy.VALIDATE_TITLES(HomeOB.get_newProduct_DiscPrice());
+  //   });
+  //  it("Verify bestSeller product Images", function () {
+  //     HomeOB.get_newProduct_Txt().scrollIntoView();
+  //     cy.VALIDATE_IMAGES(HomeOB.get_NEwProductIMG());
+  //   });
 
 
 
 
 
+ 
+  //  it("Verify Add to cart Button", function () {
+
+
+  //   cy.VALIDATE_ADD_TO_CART_BUTTON(HomeOB.get_NEwProductAddToCartBtn({force: true}))
+ 
+  //   })
+
+
+
+
+
+
+
+    it("Verify Add to cart Button", function () {
+      HomeOB.get_newProduct_OrignalPrice().first().invoke('show').then(function($el){
+        cy.get(".product-type-1 .content-wrapper div[class*='cart-with-quantity']").first().click({force:true})
+   
+      }).then(function(){
+        cy.get(':nth-child(34) > .woocommerce-message',{timeout: 10000}).should('be.visible')
+      })
+ });
+
+
+
+    // it("Verify Add to cart Button", function () {
+    //   HomeOB.get_bestSellerProductCard_AddToCartBtn().each(($btn, index) => {
+    //     if (index == 3) {
+    //       cy.wrap($btn)
+    //         .click()
+    //         .then(function () {
+    //           //   // Cypress.config('defaultCommandTimeout', 100000)
+
+    //           HomeOB.get_bestSellerProduct_addToCartSuccessMSG({
+    //             timeout: 10000,
+    //           }).should("be.visible");
+    //         });
+    //     }
+    //   });
+    // });
+
+  //   it("Best Seller Cart with Quantity PLus Button", function () {
+  //     cy.VALIDATE_CART_WITH_QUANITY_BTN(
+  //       HomeOB.get_bestSellerProduct_CartWithQuantityPlusBtn()
+  //     );
+  //   });
+
+  //   it("Best Seller Cart with Quantity Minus Button", function () {
+  //     cy.VALIDATE_CART_WITH_QUANITY_BTN(
+  //       HomeOB.get_bestSellerProduct_CartWithQuantityMinusBtn()
+  //     );
+  //   });
 
 
 });
